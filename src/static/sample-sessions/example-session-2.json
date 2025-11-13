@@ -1,0 +1,26 @@
+[
+  {
+    "role": "user",
+    "content": {
+      "text": "I need to debug this React component. It's not rendering correctly."
+    }
+  },
+  {
+    "role": "assistant",
+    "content": {
+      "thinking": "",
+      "toolFormerData": {
+        "tool": "code_analyzer",
+        "input": "React component analysis",
+        "output": "Detected missing key prop in list rendering"
+      },
+      "text": "I've analyzed your component. The issue is that you're rendering a list without proper key props. Here's the fix:\n\n```jsx\nfunction ItemList({ items }) {\n  return (\n    <ul>\n      {items.map((item) => (\n        <li key={item.id}>{item.name}</li>\n      ))}\n    </ul>\n  );\n}\n```\n\nAlways use unique keys when rendering lists in React."
+    }
+  },
+  {
+    "role": "user",
+    "content": {
+      "text": "Perfect! Thank you."
+    }
+  }
+]

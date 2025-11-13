@@ -617,6 +617,30 @@ footer {
   position: absolute;
   top: 10px;
   right: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.session-viewer-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--primary-text);
+  text-decoration: none;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s;
+  border: 2px solid transparent;
+}
+
+.session-viewer-link:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
 }
 
 #user-status {
