@@ -1,0 +1,20 @@
+[
+  {
+    "role": "user",
+    "content": {
+      "text": "Write a SQL query to find the top 5 customers by total purchase amount."
+    }
+  },
+  {
+    "role": "assistant",
+    "content": {
+      "thinking": "Need to join customers with orders, aggregate the purchase amounts, and limit to top 5. Should use GROUP BY and ORDER BY.",
+      "toolFormerData": {
+        "tool": "sql_validator",
+        "input": "SELECT c.customer_id, c.name, SUM(o.amount) as total FROM customers c JOIN orders o ON c.id = o.customer_id GROUP BY c.customer_id, c.name ORDER BY total DESC LIMIT 5",
+        "output": "Valid SQL query - optimized with proper indexes"
+      },
+      "text": "Here's the SQL query to find the top 5 customers:\n\n```sql\nSELECT \n    c.customer_id,\n    c.name,\n    SUM(o.amount) as total_purchase\nFROM customers c\nJOIN orders o ON c.id = o.customer_id\nGROUP BY c.customer_id, c.name\nORDER BY total_purchase DESC\nLIMIT 5;\n```\n\nThis query joins the customers and orders tables, sums up the purchase amounts, and returns the top 5."
+    }
+  }
+]

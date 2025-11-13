@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Coding Session Viewer</title>
+    <link rel="stylesheet" href="session-viewer.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <h1>🤖 AI Coding Session Viewer</h1>
+        <p class="subtitle">Visualize AI coding conversations and tool interactions</p>
+      </div>
+      <nav>
+        <a href="index.html" class="nav-link">← Back to Activities</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- File Upload Section -->
+      <section class="upload-section">
+        <div class="upload-container">
+          <div class="upload-area" id="uploadArea">
+            <div class="upload-icon">📁</div>
+            <h3>Load Session JSON File</h3>
+            <p>Drag & drop a JSON file here or click to browse</p>
+            <input
+              type="file"
+              id="fileInput"
+              accept=".json,application/json"
+              hidden
+            />
+            <button id="browseButton" class="browse-button">Browse Files</button>
+          </div>
+          
+          <!-- Sample Sessions -->
+          <div class="sample-sessions">
+            <h4>Or try a sample session:</h4>
+            <div class="sample-buttons">
+              <button class="sample-button" data-file="sample-sessions/example-session-1.json">
+                📝 Factorial Function
+              </button>
+              <button class="sample-button" data-file="sample-sessions/example-session-2.json">
+                ⚛️ React Debugging
+              </button>
+              <button class="sample-button" data-file="sample-sessions/example-session-3.json">
+                🗄️ SQL Query
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Session Display Section -->
+      <section class="session-section" id="sessionSection">
+        <div class="session-container">
+          <div class="session-header">
+            <h2>Conversation</h2>
+            <button id="clearButton" class="clear-button">Clear Session</button>
+          </div>
+          <div class="messages-container" id="messagesContainer">
+            <!-- Messages will be rendered here -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Empty State -->
+      <section class="empty-state" id="emptyState">
+        <div class="empty-content">
+          <div class="empty-icon">💬</div>
+          <h3>No session loaded</h3>
+          <p>Upload a JSON file or select a sample session to get started</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>AI Coding Session Viewer &copy; 2023</p>
+    </footer>
+
+    <script src="session-viewer.js"></script>
+  </body>
+</html>
